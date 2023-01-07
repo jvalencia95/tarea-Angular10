@@ -1,0 +1,29 @@
+<main class="container mt-5">
+  <section class="row gap-5">
+    <section class="col border p-5">
+      <div>
+        <input class="form-control mb-3" type="text" name="tarea" placeholder="Ingrese nombre tarea"
+          [(ngModel)]="tarea">
+      </div>
+      <div>
+        <textarea class="form-control mb-3" name="txtArea" id="" cols="30" rows="10" placeholder="Ingrese descripcion"
+          [(ngModel)]="descripcion"></textarea>
+      </div>
+      <button class="btn btn-primary" (click)="Agregar()" [disabled]="descripcion?null:true">Guardar</button>
+    </section>
+
+
+    <section class="col border p-5">
+      <p class="mb-4">Lista de Tareas</p>
+      <ul>
+        <li *ngFor="let fila of array">
+          <span>{{fila.Nombre}}:</span>
+          <span>{{fila.Descripcion}}</span>
+        </li>
+      </ul>
+    </section>
+  </section>
+</main>
+
+
+
